@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+
+    }
+    .message{
+        color:#ccc;
+
+    }
+    .wrong{
+        color: red;
+
+    }
+    .right {
+        color: green;
+    }
+</style>
+<body>
+    <div>
+        <input type="text" name="" class="ipt">
+        <p class="message" >请输入6-16位密码</p>
+    </div>
+    <script>
+        var ipt = document.querySelector('.ipt')
+        var message = document.querySelector('.message')
+        ipt.onblur = function(){
+            //根据表单里面值的长度 ipt.value.length
+            if(this.value.length < 6 || this.value.length > 16){
+                message.className = 'message wrong'
+                message.innerHTML = '您输入的错误'
+
+            }else {
+                message.className = 'message right'
+                message.innerHTML = '您输入的正确'
+            }
+        }
+    </script>
+</body>
+</html>

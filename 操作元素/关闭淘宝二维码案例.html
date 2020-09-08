@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            margin: 100px auto;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            background-color: pink;
+        }
+        .close-btn{
+            position: absolute;
+            top: 0;
+            left: -30px;
+            width: 30px;
+            height: 30px;
+            font-size: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        淘宝二维码
+        <img src="" alt="">
+        <i class="close-btn">x</i>
+    </div>
+    <script>
+        //1.获取元素
+        var btn = document.querySelector('.close-btn');
+        var box = document.querySelector('.box')
+        //2.注册事件 程序处理
+        btn.onclick = function(){
+            box.style.display = 'none';
+
+        }
+    </script>
+</body>
+</html>
