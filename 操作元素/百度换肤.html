@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(./img/1.png);
+        }
+        ul,li{
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+        }
+        li{
+            float: left;
+        }
+        .box{
+            margin: 100px auto;
+            width: 700px;
+            height: 200px;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li>
+            <img src="./img/1.png" alt="">
+        </li>
+        <li>
+            <img src="./img/2.png" alt="">
+        </li>
+        <li> 
+            <img src="./img/3.png" alt="">    
+        </li>
+    </ul>
+    <script>
+        var imgs = document.querySelector('ul').querySelectorAll('img')
+        for(i=0;i<imgs.length;i++){
+            imgs[i].onmouseover = function(){
+                console.log(this.src)
+                //this.src 就是我们点击图标的路径
+                document.body.style.backgroundImage = 'url('+this.src+')'
+            }
+        }
+
+    </script>
+</body>
+</html>

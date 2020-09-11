@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100%;
+            height: 300px;
+            background-color: pink;
+            position: relative;
+        }
+        .close{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 30px;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="close">X</div>
+       
+    </div>
+    <script>
+        //1.获取元素
+        var close = document.querySelector('.close')
+        var box = document.querySelector('.box')
+        //2.注册事件
+        close.onclick = function(){
+            box.style = 'display:none'
+        }
+    </script>
+</body>
+</html>

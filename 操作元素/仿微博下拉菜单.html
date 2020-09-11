@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单</title>
+    <style>
+        ul{
+            width: 100px;
+            height: 40px;
+            background-color: #ccc;
+            line-height: 40px;
+            text-align: center;
+            font-size: 30px;
+            margin: 0;
+            border-bottom:1px solid #bbb ;
+            
+        }
+        ul,li{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            cursor: pointer;
+        }
+        li{
+            display: none;
+            width: 100px;
+            height: 40px;
+            background-color: #ccc;
+            line-height: 40px;
+            text-align: center;
+            border-bottom:1px solid #bbb;
+        }
+        li:hover{
+            background-color: pink;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        
+        <ul class="first"> 你好
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <script>
+        var xiala = document.querySelector('.first')
+        var lis = document.querySelectorAll('li')
+        xiala.onmouseover = function(){
+            for(var i = 0;i<6;i++){
+                lis[i].style = 'display:block;'
+            }
+        }
+
+        xiala.onmouseout = function(){
+            for(var i = 0;i<6;i++){
+                lis[i].style = 'display:none;'
+            }
+        }
+    </script>
+</body>
+</html>

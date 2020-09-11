@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        thead{
+            width: 300px;
+            height: 50px;
+            border: 1px solid black;
+
+        }
+        thead>tr>td{
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+
+        }
+        table{
+            border: 1px solid black;
+        }
+        .bcg{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <td><input type="checkbox" id="th"></td>
+            <td>2</td>
+            <td>3</td>
+        </thead>
+        <tbody id="tb">
+            <tr>
+            <td><input type="checkbox"></td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var th = document.getElementById('th')
+        var tb = document.getElementById('tb').getElementsByTagName('input')
+
+        th.onclick = function(){
+            for(var i = 0;i<tb.length; i++){
+                tb[i].checked = this.checked
+            }
+        }
+        for(var i=0;i<tb.length;i++){
+            tb[i].onclick = function(){
+                //flag控制全选按钮是否选中
+                var flag = true;
+                for(var j=0;j<tb.length;j++){
+                    if(!tb[j].checked){
+                        flag = false;
+                        break;  //退出for循环，这样可以提高执行效率，因为只要有一个没选中就可以结束循环
+                    }
+                }
+                th.checked = flag;
+            }
+        }
+        var tds = document.querySelector('tbody').querySelectorAll('tr')
+        for(i=0;i<tds.length;i++){
+            tds[i].onmouseover = function(){
+                this.className = 'bcg';
+            }
+            tds[i].onmouseout = function(){
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+</html>

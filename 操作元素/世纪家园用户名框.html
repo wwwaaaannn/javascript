@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            color: #ccc;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" name="" value="邮箱/ID/手机号">
+    </div>
+    <script>
+        //1.获取元素
+        var ipt = document.querySelector('input')
+        ipt.onfocus = function(){
+            if(this.value == '邮箱/ID/手机号'){
+                ipt.value = ''
+            }
+            ipt.style='color:black;'
+            }
+        ipt.onblur = function(){
+            if(this.value == ''){
+                ipt.value = '邮箱/ID/手机号'
+                ipt.style = 'color:#ccc'
+            }
+            
+        }
+
+    </script>
+</body>
+</html>
